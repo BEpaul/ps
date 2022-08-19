@@ -12,3 +12,5 @@ while True:
         break
 
 print(cnt)
+
+# 반복문 안에서 loop 돌때 변수 초기화 신경쓰자!
