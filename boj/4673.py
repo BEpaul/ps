@@ -4,3 +4,4 @@ def selfnumber(n):
         n //= 10
         res += 1
 
+# 4673
