@@ -15,6 +15,3 @@ if cnt % 2 == 0:
     print(str(cnt-rem) + '/' + str(rem))
 elif cnt % 2 == 1:
     print(str(rem) + '/' + str(cnt-rem))
-
-
-## 홀짝 나누어서 진행
