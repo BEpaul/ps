@@ -1,14 +1,8 @@
 A, B, V = map(int, input().split())
-height = 0
-day = 1
 
-while True:
-    height += A
-    if height >= V:
-        break
+res = (V-B) / (A-B)
 
-    height -= B
-
-    day += 1
-
-print(day)
+if res == int(res):
+    print(int(res))
+else:
+    print(int(res) + 1)
