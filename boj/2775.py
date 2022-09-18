@@ -1,15 +1,23 @@
 T = int(input())
 
-# def cal_resid():
+def cal_resid(resid, iter):
+    temp = 0
+    for i in range(iter):
+        resident = []
+        temp += resid[i]
+        resident[i] = temp
+    return resident
+
+# resid = 1
 
 for i in range(T):
-
     k = int(input())
     n = int(input())
-
     
+    resid_list = list(range(1,n+1))
 
-print()
-# 2  1 4 10 20
-# 1  1 3 6 10
-# 0  1 2 3 4 
+    for j in range(k):
+        res = cal_resid(resid_list, n+1)
+        resid_list = res
+    
+print(resid_list[0])
