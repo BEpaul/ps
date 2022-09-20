@@ -8,7 +8,7 @@ def cal_resid(resid, iter):
         resident[i] = temp
     return resident
 
-# resid = 1
+# resid = 12
 
 for i in range(T):
     k = int(input())
