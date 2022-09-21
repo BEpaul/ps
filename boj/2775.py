@@ -1,23 +1,17 @@
 T = int(input())
 
-def cal_resid(resid, iter):
-    temp = 0
-    for i in range(iter):
-        resident = []
-        temp += resid[i]
-        resident[i] = temp
-    return resident
-
-# resid = 12
-
 for i in range(T):
     k = int(input())
     n = int(input())
-    
-    resid_list = list(range(1,n+1))
+    floor_resid = [list(range(1, 15))]
 
-    for j in range(k):
-        res = cal_resid(resid_list, n+1)
-        resid_list = res
-    
-print(resid_list[0])
+    for j in range(1, 15):
+        temp_list = []
+        resid = 0
+        for index in range(14):
+            resid += floor_resid[j-1][index]
+            temp_list.append(resid)
+            
+        floor_resid.append(temp_list)
+
+    print(floor_resid[k][n-1])
