@@ -1,10 +1,10 @@
-from audioop import avg
+import sys
 from collections import Counter
 
 N = int(input())
 num_list = []
 for i in range(N):
-    num_list.append(int(input()))
+    num_list.append(int(sys.stdin.readline()))
 
 num_list.sort()
 
@@ -27,4 +27,3 @@ else:
     
 # 차
 print(max(num_list) - min(num_list))
-
