@@ -27,3 +27,8 @@ else:
     
 # 차
 print(max(num_list) - min(num_list))
+
+
+# collections.Counter
+# most_common(k): 최빈값 구할 수 있음(k번째까지)
+# Key를 이용하여 Value 갱신도 가능!
