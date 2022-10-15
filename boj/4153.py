@@ -1,11 +1,13 @@
 while(True):
-    a, b, c = map(int, input().split())
+    length_list = list(map(int, input().split()))
     
-    if a == 0 and b == 0 and c == 0:
+    if sum(length_list) == 0:
         break
 
+    max_len = max(length_list)
+    length_list.remove(max_len)
+
+    if length_list[0] ** 2 + length_list[1] ** 2 == max_len ** 2:
+        print("right")
     else:
-        if pow(a, 2) + pow(b, 2) == pow(c, 2):
-            print("right")
-        else:
-            print("wrong")
+        print("wrong")
