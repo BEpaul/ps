@@ -1,8 +1,13 @@
-n = int(input())
-s = list(map(int, input().split()))
-num = 0
-s.sort()
-for i in range(n):
-    for j in range(i + 1):
-        num += s[j]
-print(num)
+import sys
+
+N = int(sys.stdin.readline())
+li = list(map(int, sys.stdin.readline().split()))
+li.sort()
+
+res = 0
+cnt = N
+for i in range(N):
+    res += li[i] * cnt
+    cnt -= 1
+
+print(res)
