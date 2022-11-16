@@ -18,4 +18,3 @@ for idx in range(N):
     K = rem
 
 print(count)
-
