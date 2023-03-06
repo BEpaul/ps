@@ -1,7 +1,8 @@
+X, Y = map(int, input().split())
+
 days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 last = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-X, Y = map(int, input().split())
 day = 0
 
 for i in range(0, X - 1):
