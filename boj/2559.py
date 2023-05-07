@@ -1,20 +1,19 @@
 import sys
+n, k = map(int, sys.stdin.readline().split())
+li = list(map(int, input().split()))
 
-N, K = map(int, sys.stdin.readline().split())
+P = [0] * n
+P[0] = li[0]
+res = []
 
-A = list(map(int, sys.stdin.readline().split()))
-P = [0]
-p = 0
-for temp in A:
-    p += temp
-    P.append(p)
+for i in range(1, n):
+    P[i] = P[i-1] + li[i]
 
-max = -1
+for j in range(n):
+    idx = j-k
+    if 0 <= idx <= n:
+        res.append(P[j] - P[idx])
+    elif idx == -1:
+        res.append(P[j])
 
-for i in range(N+1):
-    if i+K > N:
-        break
-    if P[i+K]-P[i] > max:
-        max = P[i+K]-P[i]
-
-print(max)
+print(max(res))
