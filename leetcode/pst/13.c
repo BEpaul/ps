@@ -1,42 +1,21 @@
-#include <string.h>
+int map (char c) {
+    if (c == 'I') return 1;
+    if (c == 'V') return 5;
+    if (c == 'X') return 10;
+    if (c == 'L') return 50;
+    if (c == 'C') return 100;
+    if (c == 'D') return 500;
+    if (c == 'M') return 1000;
+    return 0;
+} 
 
-int romanToInt(char * s){
-    int i, result = 0;
-    for (i = 0; i < strlen(s); i++) {
-        if (s[i] == 'I') {
-            if (i != strlen(s) - 1 && s[i+1] == 'V') {
-                result += 4;
-                i++;
-            } else if (i != strlen(s) - 1 && s[i+1] == 'X'){
-                result += 9;
-                i++;
-            } else result += 1;
-        } else if (s[i] == 'V') {
-            result += 5;
-        } else if (s[i] == 'X') {
-            if (i != strlen(s) - 1 && s[i+1] == 'L') {
-                result += 40;
-                i++;
-            } else if (i != strlen(s) - 1 && s[i+1] == 'C') {
-                result += 90;
-                i++;
-            } else result += 10;
-        } else if (s[i] == 'L') {
-            result += 50;
-        } else if (s[i] == 'C') {
-            if (i != strlen(s) - 1 && s[i+1] == 'D') {
-                result += 400;
-                i++;
-            } else if (i != strlen(s) - 1 && s[i+1] == 'M') {
-                result += 900;
-                i++;
-            } else result += 100;
-        } else if (s[i] == 'D') {
-            result += 500;
-        } else if (s[i] == 'M') {
-            result += 1000;
-        }
+int romanToInt(char* s) {
+    int len = strlen(s), sum = 0;
+    for (int i = 0; i < len; i++) {
+        if (map(s[i]) < map(s[i + 1]))
+            sum -= map(s[i]);
+        else
+            sum += map(s[i]);
     }
-
-    return result;
+    return sum;
 }
