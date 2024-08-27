@@ -10,7 +10,6 @@ public class Main {
     static Map<Integer, Integer> position;
 
     public static void main(String[] args) throws Exception {
-        System.setIn(new FileInputStream("src/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         t = Integer.parseInt(br.readLine());
@@ -27,12 +26,11 @@ public class Main {
             while (m-- > 0) {
                 int select = Integer.parseInt(st.nextToken());
                 int pos = position.get(select);
-
+                
                 bw.write(query(1, S, 1, pos + 1, MAX) + " ");
                 update(pos, 0);
                 update(check, 1);
                 position.put(select, check++);
-
             }
             bw.newLine();
         }
